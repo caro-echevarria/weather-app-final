@@ -16,13 +16,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <div class="weatherInfo">
-          <h1 class="city">Mexico City</h1>
-          <div class="row">
-            <div class="col-6">
-              <span class="temperature">☀ 17°C</span>
-              <br />
+      <div class="weather-wrapper">
+        <div class="weather-app">
+          <div class="weatherInfo">
+            <div class="overview">
+              <h1 class="city">Mexico City</h1>
               <ul>
                 <li>
                   <span class="date"> Monday April 19, 2021</span>
@@ -32,23 +30,38 @@
                 </li>
               </ul>
             </div>
-            <div class="col-6">
-              <ul>
-                <span class="conditions">
-                  <li>
-                    <span class="description"> Mostly Sunny</span>
-                  </li>
-                  <li>
-                    <span class="precipitation">Precipitation: 0%</span>
-                  </li>
-                  <li>
-                    <span class="humidity"> Humididy: 10%</span>
-                  </li>
-                  <li>
-                    <span class="wind"> Wind: 10 km/h</span>
-                  </li>
-                </span>
-              </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt="Clear"
+                    class="float-left"
+                  />
+                  <div class="float-left">
+                    <strong>17</strong
+                    ><span class="units"> °C | <a href="#">°F</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <span class="conditions">
+                    <li>
+                      <span class="description"> Mostly Sunny</span>
+                    </li>
+                    <li>
+                      <span class="precipitation">Precipitation: 0%</span>
+                    </li>
+                    <li>
+                      <span class="humidity"> Humididy: 10%</span>
+                    </li>
+                    <li>
+                      <span class="wind"> Wind: 10 km/h</span>
+                    </li>
+                  </span>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
