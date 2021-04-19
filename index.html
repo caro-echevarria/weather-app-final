@@ -4,55 +4,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div class="weatherInfo">
-        <h4 class="city">Mexico City</h4>
-        <div class="row">
-          <div class="col-6">
-            <span class="temperature"> 17°C</span>
-            <br />
-            <span class="date"> Monday April 19, 2021</span>
-            <br />
-            <span class="time"> 01:41 pm</span>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>
-                <span class="condition">☀ Mostly Sunny</span>
-              </li>
-              <li>
-                <span class="precipitation">Precipitation: 0%</span>
-              </li>
-              <li>
-                <span class="humidity"> Humididy: 10%</span>
-              </li>
-              <li>
-                <span class="wind"> Wind: 10 km/h</span>
-              </li>
-            </ul>
+      <div class="weather-app">
+        <div class="weatherInfo">
+          <h1 class="city">Mexico City</h1>
+          <div class="row">
+            <div class="col-6">
+              <span class="temperature">☀ 17°C</span>
+              <br />
+              <ul>
+                <li>
+                  <span class="date"> Monday April 19, 2021</span>
+                </li>
+                <li>
+                  <span class="time"> 01:41 pm</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul>
+                <span class="conditions">
+                  <li>
+                    <span class="description"> Mostly Sunny</span>
+                  </li>
+                  <li>
+                    <span class="precipitation">Precipitation: 0%</span>
+                  </li>
+                  <li>
+                    <span class="humidity"> Humididy: 10%</span>
+                  </li>
+                  <li>
+                    <span class="wind"> Wind: 10 km/h</span>
+                  </li>
+                </span>
+              </ul>
+            </div>
           </div>
         </div>
+        <small>
+          <a
+            href="https://github.com/caro-echevarria/weather-app-final"
+            target="_blank"
+          >
+            Open-source code</a
+          >
+          by Carolina Echevarría
+        </small>
       </div>
-      <small>
-        <a
-          href="https://github.com/caro-echevarria/weather-app-final"
-          target="_blank"
-        >
-          Open-source code</a
-        >
-        by Carolina Echevarría
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
