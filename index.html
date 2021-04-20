@@ -41,7 +41,7 @@
           </form>
           <div class="weatherInfo">
             <div class="overview">
-              <h1 class="city">Mexico City</h1>
+              <h1 id="city"></h1>
               <ul>
                 <li>
                   <span class="date"> Monday April 19, 2021</span>
@@ -60,7 +60,7 @@
                     class="float-left"
                   />
                   <div class="float-left">
-                    <strong>17</strong
+                    <strong id="temperature"></strong
                     ><span class="units"> °C | <a href="#">°F</a></span>
                   </div>
                 </div>
@@ -68,18 +68,10 @@
               <div class="col-6">
                 <ul>
                   <span class="conditions">
-                    <li>
-                      <span class="description"> Mostly Sunny</span>
-                    </li>
-                    <li>
-                      <span class="precipitation">Precipitation: 0%</span>
-                    </li>
-                    <li>
-                      <span class="humidity"> Humididy: 10%</span>
-                    </li>
-                    <li>
-                      <span class="wind"> Wind: 10 km/h</span>
-                    </li>
+                    <li id="description"></li>
+                    <li>Precipitation: <span id="precipitation"></span>%</li>
+                    <li>Humididy: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
                   </span>
                 </ul>
               </div>
@@ -87,13 +79,24 @@
           </div>
         </div>
         <small>
+          This project was coded by
+          <a
+            href="https://www.linkedin.com/in/carolina-genoveva-echevarría-aguilar"
+            target="_blank"
+          >
+            Carolina Echevarria</a
+          >
+          and is
           <a
             href="https://github.com/caro-echevarria/weather-app-final"
             target="_blank"
           >
-            Open-source code</a
+            open-sourced on GitHub</a
           >
-          by Carolina Echevarría
+          and
+          <a href="https://sleepy-almeida-c17476.netlify.app/" target="_blank">
+            hosted on Netlify</a
+          >
         </small>
       </div>
     </div>
