@@ -62,6 +62,7 @@ function displayTemperature(response) {
 }
 
 let apiKey = "fc05c82742f2f3ebf4f9a474f1172d7d";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Mexico City&appid=${apiKey}&units=metric`;
+let city = "Mexico City";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
