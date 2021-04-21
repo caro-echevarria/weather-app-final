@@ -67,7 +67,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
-let apiKey = "fc05c82742f2f3ebf4f9a474f1172d7d";
-let city = "Mexico City";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "fc05c82742f2f3ebf4f9a474f1172d7d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElementInput = document.querySelector("#city-input");
+  search(cityElementInput.value);
+}
+
+search("Mexico City");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
