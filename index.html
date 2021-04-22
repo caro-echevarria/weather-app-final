@@ -34,7 +34,7 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-100"
+                  class="btn btn-info w-100"
                 />
               </div>
             </div>
@@ -57,7 +57,10 @@
                   <img src="" alt="" id="icon" class="float-left" />
                   <div class="float-left">
                     <strong id="temperature"></strong
-                    ><span class="units"> °C | <a href="#">°F</a></span>
+                    ><span class="units">
+                      <a href="#" id="celsius-link" class="active">°C</a> |
+                      <a href="#" id="fahrenheit-link">°F</a></span
+                    >
                   </div>
                 </div>
               </div>
@@ -75,14 +78,14 @@
           </div>
         </div>
         <small>
-          This project was coded by
+          Project coded by
           <a
             href="https://www.linkedin.com/in/carolina-genoveva-echevarría-aguilar"
             target="_blank"
           >
             Carolina Echevarria</a
           >
-          and is
+          and
           <a
             href="https://github.com/caro-echevarria/weather-app-final"
             target="_blank"
