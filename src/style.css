@@ -89,3 +89,7 @@ small a:hover {
   color: teal;
   font-weight: bolder;
 }
+
+#search-form {
+  text-align: center;
+}

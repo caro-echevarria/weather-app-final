@@ -1,46 +1,66 @@
-function formatDate(timestamp) {
-  let now = new Date(timestamp);
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
+function formatDate(date, timezone) {
+  let localOffsetInMs = date.getTimezoneOffset() * 60 * 1000;
+  let targetOffsetInMs = timezone * 1000;
+  let targetTimestamp = date.getTime() + localOffsetInMs + targetOffsetInMs;
+
+  let localDate = new Date(targetTimestamp);
+
+  let dayIndex = localDate.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[dayIndex];
+
+  let monthIndex = localDate.getMonth();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[monthIndex];
+  let dateIndex = localDate.getDate();
+  let year = localDate.getFullYear();
+
+  let hours = localDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  let minutes = localDate.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let year = now.getFullYear();
-  let date = now.getDate();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let day = days[now.getDay()];
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[now.getMonth()];
-  return `${day} ${month} ${date}, ${year}`;
+
+  let currentTime = `${hours}:${minutes}`;
+  document.querySelector(
+    "#date"
+  ).innerHTML = `${day} ${currentTime} ${month} ${dateIndex}, ${year}`;
+
+  let formattedDate = `${month} ${dateIndex}, ${year} <br/>
+  ${day} ${currentTime}`;
+
+  return formattedDate;
 }
 
-function formatTime(timestamp) {
-  let now = new Date(timestamp);
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${hours}:${minutes}`;
+  let currentHour = `${hours}:${minutes}`;
+
+  return currentHour;
 }
 
 function displayTemperature(response) {
@@ -50,7 +70,6 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-  let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
@@ -60,13 +79,13 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  timeElement.innerHTML = formatTime(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(new Date(), response.data.timezone);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].icon);
+  console.log(response.data);
 }
 
 function search(city) {
