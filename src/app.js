@@ -73,6 +73,8 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
+  celsiusFeels = response.data.main.feels_like;
+  document.querySelector("#feels-like").innerHTML = Math.round(celsiusFeels);
 
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
@@ -118,6 +120,8 @@ function displayFahrenheit(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  fahrenheitFeels = (celsiusFeels * 9) / 5 + 32;
+  document.querySelector("#feels-like").innerHTML = Math.round(fahrenheitFeels);
 }
 
 function displayCelsius(event) {
@@ -126,9 +130,11 @@ function displayCelsius(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
+  document.querySelector("#feels-like").innerHTML = Math.round(celsiusFeels);
 }
 
 let celsiusTemp = null;
+let celsiusFeels = null;
 
 let form = document.querySelector("#city-input");
 form.addEventListener("submit", handleSubmit);

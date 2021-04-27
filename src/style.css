@@ -93,3 +93,11 @@ small a:hover {
 #search-form {
   text-align: center;
 }
+
+.conditions {
+  text-align: right;
+}
+
+.forecastInfo {
+  text-align: center;
+}
