@@ -11,6 +11,11 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/fcabed939c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
@@ -21,30 +26,23 @@
         <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-6">
+              <div class="col-4"></div>
+              <div class="col-5">
                 <input
                   type="search"
-                  placeholder="Type a city"
+                  placeholder="Enter a city"
                   class="form-control"
                   id="city-input"
                   autocomplete="off"
                 />
               </div>
               <div class="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  id="search-button"
-                  class="btn btn-info w-100"
-                />
-              </div>
-              <div class="col-3">
-                <input
-                  type="submit"
-                  value="Current"
-                  id="current-button"
-                  class="btn btn-info w-100"
-                />
+                <button type="submit" id="search-button">
+                  <i class="fa fa-search"></i>
+                </button>
+                <button type="submit" id="current-button">
+                  <i class="fas fa-map-marker-alt"></i>
+                </button>
               </div>
             </div>
           </form>
@@ -74,7 +72,9 @@
                 </div>
               </div>
               <div class="col-4">
-                <h7> Feels like: <span id="feels-like"></span></h7>
+                <h7>
+                  <strong> Feels like: <span id="feels-like"></span></strong
+                ></h7>
                 <ul>
                   <li id="description"></li>
                 </ul>
@@ -82,8 +82,14 @@
               <div class="col-3">
                 <ul>
                   <span class="conditions">
-                    <li>Humidity: <span id="humidity"></span>%</li>
-                    <li>Wind: <span id="wind"></span> km/h</li>
+                    <li>
+                      Humidity:
+                      <span id="humidity"></span>%
+                    </li>
+                    <li>
+                      Wind:
+                      <span id="wind"></span> km/h
+                    </li>
                   </span>
                 </ul>
               </div>
@@ -91,30 +97,39 @@
           </div>
           <hr />
           <div class="forecastInfo">
-            <h5>Daily Forecast:</h5>
             <div class="weather-forecast" id="forecast"></div>
           </div>
         </div>
-        <small>
-          Project coded by
-          <a
-            href="https://www.linkedin.com/in/carolina-genoveva-echevarría-aguilar"
-            target="_blank"
-          >
-            Carolina Echevarria</a
-          >
-          and
-          <a
-            href="https://github.com/caro-echevarria/weather-app-final"
-            target="_blank"
-          >
-            open-sourced on GitHub</a
-          >
-          and
-          <a href="https://sleepy-almeida-c17476.netlify.app/" target="_blank">
-            hosted on Netlify</a
-          >
-        </small>
+        <footer>
+          <small>
+            Coded by
+            <a
+              href="https://www.linkedin.com/in/carolina-genoveva-echevarría-aguilar"
+              target="_blank"
+            >
+              Carolina Echevarria <i class="fab fa-linkedin"></i
+            ></a>
+            <br />
+            <a
+              href="https://github.com/caro-echevarria/weather-app-final"
+              target="_blank"
+            >
+              Open-sourced <i class="fab fa-github"></i
+            ></a>
+            and
+            <a
+              href="https://sleepy-almeida-c17476.netlify.app/"
+              target="_blank"
+            >
+              hosted at Netlify
+              <span
+                class="iconify"
+                data-icon="simple-icons:netlify"
+                data-inline="false"
+              ></span
+            ></a>
+          </small>
+        </footer>
       </div>
     </div>
     <script src="src/app.js"></script>
