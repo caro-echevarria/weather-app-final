@@ -74,7 +74,9 @@ function displayTemperature(response) {
 
   celsiusTemp = response.data.main.temp;
   celsiusFeels = response.data.main.feels_like;
-  document.querySelector("#feels-like").innerHTML = Math.round(celsiusFeels);
+  document.querySelector("#feels-like").innerHTML = `${Math.round(
+    celsiusFeels
+  )} °C`;
 
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
@@ -121,7 +123,9 @@ function displayFahrenheit(event) {
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
   fahrenheitFeels = (celsiusFeels * 9) / 5 + 32;
-  document.querySelector("#feels-like").innerHTML = Math.round(fahrenheitFeels);
+  document.querySelector("#feels-like").innerHTML = `${Math.round(
+    fahrenheitFeels
+  )} °F`;
 }
 
 function displayCelsius(event) {
@@ -130,7 +134,9 @@ function displayCelsius(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
-  document.querySelector("#feels-like").innerHTML = Math.round(celsiusFeels);
+  document.querySelector("#feels-like").innerHTML = `${Math.round(
+    celsiusFeels
+  )} °C`;
 }
 
 let celsiusTemp = null;
